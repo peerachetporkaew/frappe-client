@@ -55,7 +55,7 @@ class FrappeClient(object):
 			'pwd': password
 		}, verify=self.verify, headers=self.headers)
 
-		if r.json().get('message') == "Logged In":
+		if r.json().get('message') in ["Logged In","No App"]:
 			self.can_download = []
 			return r.json()
 		else:
